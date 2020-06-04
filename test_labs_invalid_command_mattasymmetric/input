@@ -1,0 +1,9 @@
+2
+test_labs_invalid_command_mattasymmetric/expected/test
+turn 3 R 3
+238r203
+turn 0 F 1
+turn 0 0 0
+turn 0 F 7
+turn 6 F 6
+save test_labs_invalid_command_mattasymmetric/output/test

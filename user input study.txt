@@ -1,0 +1,45 @@
+<Main Menu>
+> 3
+
+<credits>
+
+<Main Menu>
+> 1
+
+<New Game>
+
+Enter name for player 1
+> <user enters name>
+
+Enter name for player 2
+> <user enters name>
+
+<Prints factories and mosaic for player 1>
+
+> turn 3 L 3
+
+etc...
+
+> save savedGame
+
+Game successfuly save to 'savedGame'
+
+<gameplay continues>
+
+=== Game Over ===
+
+Player <player name> wins!
+
+<Main menu>
+
+> 2
+
+Enter the gamesave from which load a game
+> <gamesave>
+
+Azul game successfuly loaded
+<Game play continues from here>
+
+> ^D
+Goodbye
+<game exits immediately>

@@ -1,0 +1,94 @@
+seed: 1
+
+
+Menu
+----
+1. New Game
+2. Load Game
+3. Credits (Show student information)
+4. Quit
+
+> Enter the savename from which to load a game
+> 
+Game State: 
+TileBag: 
+RRYYBBLLUURRYYBBLLUURRYYBBLLUURRYYBBLLUURRYYBBLLUU
+
+BoxLid: 
+R R R Y Y Y B B B L L L U U U 
+Factories: 
+0: F 
+1: R Y Y U 
+2: R B B B 
+3: B L L L 
+4: R R U U 
+5: R Y B L 
+Players: 
+Mosaic for Player Jessiah anthony Malik - points: 23
+1:         R || R . . . .
+2:       U U || . U . . .
+3:     . . B || . . B . .
+4:   . . Y Y || . . . Y .
+5: . . . L L || R Y L L B
+broken: F R U B Y L L 
+Mosaic for Player Rob William Tirtasentana - points: 30
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+turn_index: 0
+
+TURN FOR PLAYER: Jessiah anthony Malik
+Factories: 
+0: F 
+1: R Y Y U 
+2: R B B B 
+3: B L L L 
+4: R R U U 
+5: R Y B L 
+
+Mosaic for Player Jessiah anthony Malik - points: 23
+1:         R || R . . . .
+2:       U U || . U . . .
+3:     . . B || . . B . .
+4:   . . Y Y || . . . Y .
+5: . . . L L || R Y L L B
+broken: F R U B Y L L 
+> 
+Game State: 
+TileBag: 
+RRYYBBLLUURRYYBBLLUURRYYBBLLUURRYYBBLLUURRYYBBLLUU
+
+BoxLid: 
+R R R Y Y Y B B B L L L U U U 
+Factories: 
+0: F 
+1: R Y Y U 
+2: R B B B 
+3: B L L L 
+4: R R U U 
+5: R Y B L 
+Players: 
+Mosaic for Player Jessiah anthony Malik - points: 23
+1:         R || R . . . .
+2:       U U || . U . . .
+3:     . . B || . . B . .
+4:   . . Y Y || . . . Y .
+5: . . . L L || R Y L L B
+broken: F R U B Y L L 
+Mosaic for Player Rob William Tirtasentana - points: 30
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+turn_index: 0
+
+Game saved.
+
+
+~R ~R ~R ~Y ~Y ~Y ~B ~B ~B ~L ~L ~L ~U ~U ~U ~U ~U ~L ~L ~B ~B ~Y ~Y ~R ~R ~U ~U ~L ~L ~B ~B ~Y ~Y ~R ~R ~U ~U ~L ~L ~B ~B ~Y ~Y ~R ~R ~U ~U ~L ~L ~B ~B ~Y ~Y ~R ~R ~U ~U ~L ~L ~B ~B ~Y ~Y ~R ~R ~F ~R ~U ~B ~Y ~L ~L ~L ~L ~Y ~Y ~B ~U ~U ~R ~B ~L ~L ~Y ~R ~Y ~B ~U ~R ~L ~B ~Y ~R ~U ~U ~R ~R ~L ~L ~L ~B ~B ~B ~B ~R ~U ~Y ~Y ~R ~F 
+Goodbye

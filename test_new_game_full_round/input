@@ -1,0 +1,12 @@
+2
+test_new_game_full_round/load/test
+turn 2 B 1
+turn 1 B 2
+turn 3 R 2
+turn 4 L 3
+turn 5 U 3
+turn 0 Y 1
+turn 0 U 5
+turn 0 B 4
+turn 0 L 4
+save test_new_game_full_round/output/test

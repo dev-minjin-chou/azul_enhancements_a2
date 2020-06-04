@@ -1,0 +1,225 @@
+seed: 1
+
+
+Menu
+----
+1. New Game
+2. Load Game
+3. Credits (Show student information)
+4. Quit
+
+> Enter the savename from which to load a game
+> Game: 
+TileBag: 
+RULYUULBBURRBLYRRLLRBYBRLRLRLRURYYLYLYYLYBYBYRYBLLUYUBLBYURYRYYRBBLURBYBUYUBRRUL
+
+BoxLid: 
+
+Factories: 
+0: F 
+1: B B L U 
+2: B U U U 
+3: R R L U 
+4: B L L U 
+5: Y B U U 
+Players: 
+Mosaic for Player one - points: 0
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+Mosaic for Player two - points: 0
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+turn_index: 0
+
+TURN FOR PLAYER: one
+Factories: 
+0: F 
+1: B B L U 
+2: B U U U 
+3: R R L U 
+4: B L L U 
+5: Y B U U 
+
+Mosaic for Player one - points: 0
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: two
+Factories: 
+0: U U U F 
+1: B B L U 
+2: 
+3: R R L U 
+4: B L L U 
+5: Y B U U 
+
+Mosaic for Player two - points: 0
+1:         . || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: one
+Factories: 
+0: L U U U U F 
+1: 
+2: 
+3: R R L U 
+4: B L L U 
+5: Y B U U 
+
+Mosaic for Player one - points: 0
+1:         B || . . . . .
+2:       . . || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: two
+Factories: 
+0: L L U U U U U F 
+1: 
+2: 
+3: 
+4: B L L U 
+5: Y B U U 
+
+Mosaic for Player two - points: 0
+1:         . || . . . . .
+2:       B B || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: one
+Factories: 
+0: B L L U U U U U U F 
+1: 
+2: 
+3: 
+4: 
+5: Y B U U 
+
+Mosaic for Player one - points: 0
+1:         B || . . . . .
+2:       R R || . . . . .
+3:     . . . || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: two
+Factories: 
+0: Y B B L L U U U U U U F 
+1: 
+2: 
+3: 
+4: 
+5: 
+
+Mosaic for Player two - points: 0
+1:         . || . . . . .
+2:       B B || . . . . .
+3:     . L L || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: one
+Factories: 
+0: B B L L U U U U U U 
+1: 
+2: 
+3: 
+4: 
+5: 
+
+Mosaic for Player one - points: 0
+1:         B || . . . . .
+2:       R R || . . . . .
+3:     . U U || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Turn successful.
+
+TURN FOR PLAYER: two
+Factories: 
+0: B B L L 
+1: 
+2: 
+3: 
+4: 
+5: 
+
+Mosaic for Player two - points: 0
+1:         Y || . . . . .
+2:       B B || . . . . .
+3:     . L L || . . . . .
+4:   . . . . || . . . . .
+5: . . . . . || . . . . .
+broken: F 
+> Turn successful.
+
+TURN FOR PLAYER: one
+Factories: 
+0: L L 
+1: 
+2: 
+3: 
+4: 
+5: 
+
+Mosaic for Player one - points: 0
+1:         B || . . . . .
+2:       R R || . . . . .
+3:     . U U || . . . . .
+4:   . . . . || . . . . .
+5: U U U U U || . . . . .
+broken: U 
+> Turn successful.
+
+~F === Start Round ===
+TURN FOR PLAYER: two
+Factories: 
+0: F 
+1: R R L U 
+2: Y B U U 
+3: R Y B B 
+4: B B L U 
+5: R R Y Y 
+
+Mosaic for Player two - points: 2
+1:         . || . Y . . .
+2:       . . || . B . . .
+3:     . L L || . . . . .
+4:   . . B B || . . . . .
+5: . . . . . || . . . . .
+broken: 
+> Game saved.
+
+
+~R ~U ~U ~U ~U ~U ~B ~Y ~R ~U ~Y ~B ~L ~B ~U ~Y ~U ~L ~L ~B ~Y ~R ~Y ~B ~Y ~B ~Y ~L ~Y ~Y ~L ~Y ~L ~Y ~Y ~R ~U ~R ~L ~R ~L ~R ~L ~R ~B ~Y ~B ~R ~L ~L ~R ~R ~Y ~L ~B ~R ~R ~U ~B ~B ~L ~U ~U ~Y ~L ~U ~R ~B ~B ~L ~L ~B ~Y ~L ~L ~U ~U ~U ~R ~B ~Y ~Y ~R ~R ~U ~L ~B ~B ~B ~B ~Y ~R ~U ~U ~B ~Y ~U ~L ~R ~R ~F 
+Goodbye
