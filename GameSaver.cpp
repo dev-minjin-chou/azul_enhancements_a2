@@ -34,7 +34,7 @@ void GameSaver::SavePlayers(Players* players, Game* game) {
     if (out.is_open()) {
       if (out.good()) {
         out << game->getTurnIndex() << std::endl;
-        for (size_t i = 0; i < P_SZ; i++) {
+        for (size_t i = 0; i < players->size(); i++) {
           out << players->at(i)->GetName() << std::endl;
           out << players->at(i)->GetPoints() << std::endl;
         }
@@ -56,7 +56,7 @@ void GameSaver::SaveMosiac(Players* players) {
     out.open(SaveFile(savefile::mosaic));
     if (out.is_open()) {
       if (out.good()) {
-        for (size_t i = 0; i < P_SZ; i++) {
+        for (size_t i = 0; i < players->size(); i++) {
           out << players->at(i)->GetMosaic()->PatternLinesToString();
           out << players->at(i)->GetMosaic()->WallToString();
           out << players->at(i)->GetMosaic()->FloorLineToString();
@@ -103,7 +103,7 @@ void GameSaver::SaveFactories(TileFactories* factories) {
     out.open(SaveFile(savefile::factories));
     if (out.is_open()) {
       if (out.good()) {
-        for (int i = 0; i < TF_SZ; i++) {
+        for (unsigned int i = 0; i < factories->size(); i++) {
           out << factories->at(i)->ToSaveString() << std::endl;
         }
       } else {

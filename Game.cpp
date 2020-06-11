@@ -24,7 +24,7 @@ Game::~Game(){
 std::string Game::FactoriesToString() {
   std::stringstream ss;
   ss << "Factories: " << std::endl;
-  for (size_t i = 0; i < TF_SZ; i++) {
+  for (size_t i = 0; i < factories.size(); i++) {
     ss << i << ": ";
     ss << this->factories.at(i)->ToString() << std::endl;
   }
@@ -40,11 +40,9 @@ void Game::IterateTurnIndex() {
 }
 
 void Game::PopulateTiles() {
-  // Field for First player tile here
-
   // Loop through 5 factories.
-  for (int i = 1; i < TF_SZ && tbag->Size() > E_TY; i++) {
-    // Make sure that it doesn ppopulate 5 tiles in a single factory.
+  for (unsigned int i = 1; i < factories.size() && tbag->Size() > E_TY; i++) {
+    // Make sure that it doesn populate 5 tiles in a single factory.
     for (int j = 0; j < MX_T && tbag->Size() > E_TY; j++) {
       // add a tile to the current factory
       factories.at(i)->AddTile(tbag->PopTile());
@@ -54,13 +52,30 @@ void Game::PopulateTiles() {
       }
     }
   }
-  // add first player tile to centre factory
+  // add first player tile to first centre factory.
   this->factories.at(CENTRE_FACTORY)->AddTile(std::make_unique<Tile>(Colour::F));
+}
+void Game::FactorySecond() {
+   // Loop through 5 factories.
+  for (unsigned int i = 2; i < factories.size() && tbag->Size() > E_TY; i++) {
+    // Make sure that it doesn populate 5 tiles in a single factory.
+    for (int j = 0; j < MX_T && tbag->Size() > E_TY; j++) {
+      // add a tile to the current factory
+      factories.at(i)->AddTile(tbag->PopTile());
+      // if the tbag is empty and boxlid has tiles, refill tilebag from boxlid
+      if (tbag->Size() == E_TY && box_lid->Size() != E_TY) {
+        tbag->AddTiles(box_lid->RemoveFrontTiles());
+      }
+    }
+  }
+  // add first player tile to second centre factory.
+  this->factories.at(CENTRE_FACTORY)->AddTile(std::make_unique<Tile>(Colour::F));
+  this->factories.at(SECOND_FACTORY)->AddTile(std::make_unique<Tile>(Colour::F));
 }
 
 bool Game::GameOver() {
   bool gameover = false;
-  for (size_t i = 0; i < P_SZ; i++) {
+  for (size_t i = 0; i < players.size(); i++) {
     if (this->players.at(i)->GetMosaic()->RowFull()) {
       gameover = true;
     }
@@ -70,7 +85,7 @@ bool Game::GameOver() {
 
 bool Game::RoundOver() {
   bool over = true;
-  for (size_t i = 0; i < TF_SZ && over; i++) {
+  for (size_t i = 0; i < factories.size() && over; i++) {
     if (this->factories.at(i)->Size() > 0) {
       over = false;
     }
@@ -82,8 +97,8 @@ bool Game::RoundOver() {
 bool Game::TryTurn(Turn turn, PlayerPtr player) {
   bool move_successful = true;
   try {
-    int f = std::get<turnindex::factory>(turn);
-    if (f < 0 || f >= TF_SZ)
+    unsigned int f = std::get<turnindex::factory>(turn);
+    if (f < 0 || f >= factories.size())
       throw std::out_of_range("factory index out of range");
     Colour colour = std::get<turnindex::colour>(turn);
     if (colour < 0 || colour > TILE_SZ - 1)
@@ -111,14 +126,14 @@ bool Game::TryTurn(Turn turn, PlayerPtr player) {
   return move_successful;
 }
 
-void Game::FactoryToCentre(unsigned int index) {
+void Game::FactoryToCentre(unsigned int index, unsigned int choice) {
   // only move tiles from factory^index if factory is not centre factory
   if (index != CENTRE_FACTORY) {
     TileFactoryPtr tf = this->factories.at(index);
     for (size_t i = 0; i < TILE_SZ - 1; i++) {
       TileLinkedListPtr colour = tf->GetColour((Colour)i);
       while (colour->Size() > 0) {
-        this->factories.at(CENTRE_FACTORY)->AddTile(colour->RemoveFront());
+        this->factories.at(choice)->AddTile(colour->RemoveFront());
       }
     }
   }
@@ -126,7 +141,7 @@ void Game::FactoryToCentre(unsigned int index) {
 
 void Game::Scoring() {
   // find pattern lines which are full
-  for (size_t i = 0; i < P_SZ; i++) {
+  for (size_t i = 0; i < players.size(); i++) {
     PlayerPtr player = this->players.at(i);
     MosaicPtr mosaic = player->GetMosaic();
     int score = mosaic->PatternScore();
@@ -154,7 +169,7 @@ void Game::Scoring() {
 std::vector<PlayerPtr> Game::EndGameScoring() {
   std::vector<PlayerPtr> won = std::vector<PlayerPtr>();
   int highscore = 0;
-  for (size_t i = 0; i < P_SZ; i++) {
+  for (size_t i = 0; i < players.size(); i++) {
     PlayerPtr player = this->players.at(i);
     int score = player->GetMosaic()->EndGameWallScore();
     int points = player->GetPoints() + score;
@@ -183,7 +198,7 @@ std::string Game::ToString() {
   ss << this->box_lid->ToString() << std::endl;
   ss << this->FactoriesToString();
   ss << "Players: " << std::endl;
-  for (size_t i = 0; i < P_SZ; i++) {
+  for (size_t i = 0; i < players.size(); i++) {
     ss << this->players.at(i)->ToString();
   }
   ss << "turn_index: " << this->turn_index << std::endl;

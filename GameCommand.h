@@ -9,7 +9,7 @@
 
 typedef std::tuple<int, Colour, int> Turn;
 
-enum commandtype { turn, save };
+enum commandtype {turn, save};
 
 enum turnindex { factory, colour, pattern_line };
 

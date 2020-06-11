@@ -46,7 +46,7 @@ class Mosaic {
   int EndGameWallScore();
 
   // calculate the floor penalty then empty the floor line into overflow
-  // check whether first playe tile is present
+  // check whether first player tile is present
   int FloorPenalty();
 
   // return pointer to the floor line
@@ -69,6 +69,7 @@ class Mosaic {
   PatternLines pattern_lines;
   FloorLinePtr floor_line;
   TileLinkedListPtr overflow;
+  static const char* mos_wall[MOSAIC_DIM][MOSAIC_DIM];
 };
 
 #endif  // MOSAIC_H_

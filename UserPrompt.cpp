@@ -24,7 +24,7 @@ int str_to_int(const std::string word) {
 int UserPrompt::Integer(int start, int end) {
   int result = end + 1;
   while ((result > end || result < start) && std::cin.good()) {
-    std::cout << "> ";
+    std::cout << "\u00BB ";
     std::string read;
     std::getline(std::cin, read);
     try {
@@ -38,10 +38,54 @@ int UserPrompt::Integer(int start, int end) {
 }
 
 std::string UserPrompt::name() {
-  std::cout << "> ";
+  std::cout << "\u00BB ";
   std::string retVal = "";
   if (std::cin.good()) std::getline(std::cin, retVal);
   return retVal;
+}
+
+unsigned int UserPrompt::playerCount() {
+  std::cout << "\u00BB ";
+  unsigned int pCount;
+  bool validate = false;
+  std::string count;
+  if (std::cin.good()) std::getline(std::cin, count);
+
+  try {
+    pCount = std::stoi(count);
+    if (pCount > MAX_PSZ || pCount < MIN_PSZ) {
+      throw std::out_of_range("Not a valid number.");
+      validate = false;
+    } 
+  } catch (...) {
+    if (std::cin.good()) {
+      std::cout << "Invalid Input. Please try again." << std::endl;
+      validate = false;
+    } 
+  }
+  return pCount;
+}
+
+unsigned int UserPrompt::centreF() {
+  std::cout << "\u00BB ";
+  unsigned int facCount;
+  bool validate = false;
+  std::string fcount;
+  if (std::cin.good()) std::getline(std::cin, fcount);
+
+  try {
+    facCount = std::stoi(fcount);
+    if (facCount > 1 || facCount < 0) {
+      throw std::out_of_range("Not a valid number.");
+      validate = false;
+    } else {validate = true;}
+  } catch (...) {
+    if (std::cin.good()) {
+      std::cout << "Invalid Input. Please try again." << std::endl;
+      validate = false;
+    }
+  }
+  return facCount;
 }
 
 GameCommand* UserPrompt::NewGameCommand() {
@@ -49,7 +93,7 @@ GameCommand* UserPrompt::NewGameCommand() {
 
   // will exit out if game_cmd initialised or user inputs ^D
   while (game_cmd == nullptr && std::cin.good()) {
-    std::cout << "> ";
+    std::cout << "\u00BB ";
     try {
       std::string line;
       std::getline(std::cin, line);

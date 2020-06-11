@@ -11,13 +11,13 @@ void Menu::PrintList(const char* list[], unsigned int len) {
 };
 const int Menu::main_len = 7;
 const char* Menu::main_menu[Menu::main_len] = {
-    "\n\nMenu",
-    "----",
-    "1. New Game",
-    "2. Load Game",
-    "3. Credits (Show student information)",
-    "4. Help",
-    "5. Quit\n"};
+    "\n\n\u001b[34;1mMenu\u001b[0m",
+    "\u001b[37m----\u001b[0m",
+    "1. \u001b[35;1m\u0145ew Game \u001b[0m ",
+    "2. \u001b[32m\u013Foad Game \u001b[0m",
+    "3. \u001b[36m\u0187redits \u001b[0m",
+    "4. \u001b[33mHelp (\u00BF) \u001b[0m",
+    "5. \u001b[31mQuit (\u00D7) \u001b[0m\n"};
 
 void Menu::Main() { PrintList(main_menu, main_len); }
 
@@ -47,31 +47,27 @@ void Menu::Instructions() {
     
     const char* help_ins[] = {
         "",
-        "=================================HELP===================================",
+        "==================HELP==================",
         "",
-        "----Rules of the game:--------------------------------------------------",
-        "Rules of the game are fairly simple, each users are to pick a color from",
-        "the tile factories to be added to their mosiac. Once the left-hand side",
-        "of the mosaic is fully filled with the same color, it will then be added",
-        "to the RHS. The game ends after a player has completed a horizontal line",
-        "of 5 consecutive tiles in their wall. Note: First player who picks from ",
-        "the centre factory will acquire a -1 score penalty and each excess tile ",
-        "picked that is unable to be added into the player's mosaic will be added",
-        "to the broken tiles section where various penalties may apply. ",
-        "PLAYER WITH THE HIGHEST SCORE WINS!!!!",
+        "---Rules of the game:-------------------",
+        "Rules of the game are fairly simple.    ",
+        "1. Pick a tile color from the factory.  ",
+        "2. Place the tile in your mosaic.       ",
+        "3. If LHS is fully filled with same tile",
+        "4. Completed row tile is added to RHS   ",
+        "5. Game ends if a col is filled on RHS  ",
+        "Note: Penalty applies to broken tiles.  ",
         "",
-        "========================================================================",
+        "========================================",
         "",
-        "----How to play Instructions:-------------------------------------------",
-        "Each player starts by typing: turn <factory number> <tiles> <mosaic row>",
-        "Where the first number inputted is the number of the factory chosen, ",
-        "and the second value is the tile color that the player wishes to pick to",
-        "be added to their own mosaic, and lastly the last number inputted is the",
-        "number of row of the player's mosaic that the player wishes to add the",
-        " tiles into.",
-        "=============================ENJOY THE GAME!============================",
+        "---How to play Instructions:------------",
+        "1. Play by typing: turn '2''R''3'     ",
+        "turn <factory number><tiles><mosaic row>",
+        "2.Save the game by typing:save/save name",
+        "save <FileName>                         ",
+        "=============ENJOY THE GAME!============",
         "",
     };
-    PrintList(help_ins, 25);
+    PrintList(help_ins, 21);
 }
 

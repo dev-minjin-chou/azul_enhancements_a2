@@ -1,11 +1,16 @@
 // Copyright 2020 Chou, Dechathaweewat, Hollis-London
 #ifndef GAME_H_
 #define GAME_H_
-#define TF_SZ 6
+#define TF1_SZ 6
+#define TF2_SZ 8
+#define TF3_SZ 10
 #define P_SZ 2
+#define TP_SZ 3
+#define MP_SZ 4
 #define E_TY 0
 #define MX_T 4
 #define CENTRE_FACTORY 0
+#define SECOND_FACTORY 1
 
 #include <array>
 
@@ -15,8 +20,8 @@
 #include "TileBag.h"
 #include "TileFactory.h"
 
-typedef std::array<TileFactoryPtr, TF_SZ> TileFactories;
-typedef std::array<PlayerPtr, P_SZ> Players;
+typedef std::vector<TileFactoryPtr> TileFactories;
+typedef std::vector<PlayerPtr> Players;
 
 class Game {
  public:
@@ -31,8 +36,14 @@ class Game {
   // populate the factory with tiles from the tilebag
   void PopulateTiles();
 
+  // Populate tiles for single centre factories mode.
+  void FactoryOne();
+
+  // Populate tiles for single centre factories mode.
+  void FactorySecond();
+
   // move all tiles from factory to centre factory
-  void FactoryToCentre(unsigned int index);
+  void FactoryToCentre(unsigned int index, unsigned int choice);
 
   // return true if a player's mosaic wall has a full row, otherwise return
   // false

@@ -31,7 +31,7 @@ MosaicPtr Player::GetMosaic() { return this->mosaic; }
 
 std::string Player::ToString() {
   std::stringstream ss;
-  ss << "Mosaic for Player " << this->name << " - points: " << this->points
+  ss << "Mosaic for Player " << this->name << " - \u001b[32mpoints: \u001b[0m" << this->points
      << std::endl;
   ss << this->mosaic->ToString() << std::endl;
   return ss.str();

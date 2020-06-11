@@ -40,11 +40,11 @@ GamePtr GameLoader::LoadGame() {
 
 void GameLoader::LoadFactories() {
   std::ifstream in = this->OpenFile(savefile::factories);
-  for (size_t i = 0; i < TF_SZ; i++) {
+  for (size_t i = 0; i < TF1_SZ; i++) {
     std::string line;
     if (!in.good()) throw std::runtime_error("factory unreadable");
     std::getline(in, line);
-    this->factories.at(i) = TileFactory::FromString(line, i);
+    factories.push_back(TileFactory::FromString(line, i));
   }
   in.close();
 }
@@ -98,8 +98,7 @@ void GameLoader::LoadPlayers() {
     std::getline(in, p_str);
     int points = std::stoi(p_str);
     MosaicPtr mosaic = std::move(this->mosaics.at(i));
-    this->players.at(i) =
-        std::make_shared<Player>(name, points, std::move(mosaic));
+    players.push_back(std::make_shared<Player>(name, points, std::move(mosaic)));
   }
   in.close();
 }
